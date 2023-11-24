@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://img.icons8.com/plasticine/100/000000/food.png">
+    <link rel="stylesheet" href="css\style.css">
+    <link rel="stylesheet" href="css\news.css">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Newsletter - Što je za ručak?</title>
+
+</head>
+
+<body>
+
+    <div class="navigacija">
+        <ul>
+            <li><a href="index.html">Naslovnica</a></li>
+            <li><a href="rucak.html">Ručak</a></li>
+            <li><a href="deserti.html">Deserti</a></li>
+            <li><a href="about.html">O nama</a></li>
+            <li><a class="active" href="news.html">Newsletter</a></li>
+            <li><a href="svi_proizvodi.php">Shop</a></li>
+        </ul>
+    </div>
+
+    <input type="checkbox" id="hamburger-input" class="burger-shower" />
+    <label id="hamburger-menu" for="hamburger-input">
+        <nav id="sidebar-menu">
+            <h3>NAVIGACIJA</h3>
+            <ul>
+                <li><a href="index.html">Naslovnica</a></li>
+                <li><a href="rucak.html">Ručak</a></li>
+                <li><a href="deserti.html">Deserti</a></li>
+                <li><a href="about.html">O nama</a></li>
+                <li><a class="active" href="news.html">Newsletter</a></li>
+                <li><a href="svi_proizvodi.php">Shop</a></li>
+            </ul>
+        </nav>
+    </label>
+
+    <div class="overlay"></div>
+    <div class="navback"></div>
+
+    <main>
+        <div class="container">
+            <h2>Želite li prvi saznati za sve naše najnovije recepte?</h2>
+            <p>Pribilježite se na naš newsletter kako biste mjesečno, tjedno ili dnevno primali naše najnovije i
+                najfinije recepte. Jednostavno unesite svoje ime i e-mail adresu u polja niže i inspiracija brzo stiže
+                u Vaš
+                virtualni sandučić!</p>
+        </div>
+        <div class="container" style="background-color:#8E8D8A">
+            <input type="text" placeholder="Ime" id="ime">
+            <input type="text" placeholder="E-mail adresa" id="email">
+            <label style="color:#EAE7DC">
+                <input type="checkbox" id="subscribe1" onclick="procitaj2()"> Novi recepti svaki dan
+            </label>
+            <label style="color:#EAE7DC">
+                <input type="checkbox" id="subscribe2" onclick="procitaj3()"> Novi recepti svaki tjedan
+            </label>
+            <label style="color:#EAE7DC">
+                <input type="checkbox" id="subscribe3" onclick="procitaj4()"> Novi recepti svaki mjesec
+            </label>
+        </div>
+        <div class="container">
+            <input type="submit" id="button" value="Pribilježi me">
+        </div>
+        <div id="ispis"></div>
+        <div class="container" id="text1" style="display:none">Svaki dan, 2 nova jela samo za Vas!</div>
+        <div class="container" id="text2" style="display:none">Svaki tjedan, 10 novih jela samo za Vas!</div>
+        <div class="container" id="text3" style="display:none">Svaki mjesec, čak 30 novih jela samo za Vas!</div>
+    </main>
+
+    <footer>
+        <div class="footer-sadrzaj">
+            <h3>Što je za ručak?</h3>
+            <p>'Što je za ručak?' jedina je online kuharica koju ćete ikada trebati. Uživajte u ukusnim receptima,
+                svakodnevno se upustite u nove kulinarske avanture i zadivite svoje najbliže!</p>
+            <ul class="sns">
+                <li><a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="https://twitter.com/?lang=en" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="https://www.instagram.com/" target="_blank"><i class="fa fa-instagram"></i></a></li>
+                <li><a href="https://www.youtube.com/" target="_blank"><i class="fa fa-youtube"></i></a></li>
+                <li><a href="https://www.pinterest.com/" target="_blank"><i class="fa fa-pinterest"></i></a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script>
+        const ime = document.getElementById("ime");
+        const email = document.getElementById("email");
+        const button = document.getElementById("button");
+        const ispis = document.getElementById("ispis");
+
+        function procitaj() {
+            ispis.innerHTML = "<div class='container'>Dragi/a " + ime.value + ", fini recepti stižu na Vaš e-mail (" + email.value + ") uskoro.</div>";
+        }
+
+        button.addEventListener('click', procitaj);
+
+        function procitaj2() {
+            // Get the checkbox
+            var checkBox = document.getElementById("subscribe1");
+            // Get the output text
+            var text1 = document.getElementById("text1");
+
+            // If the checkbox is checked, display the output text
+            if (checkBox.checked == true) {
+                text1.style.display = "block";
+            } else {
+                text1.style.display = "none";
+            }
+        }
+
+        function procitaj3() {
+            var checkBox = document.getElementById("subscribe2");
+            var text1 = document.getElementById("text2");
+
+            if (checkBox.checked == true) {
+                text2.style.display = "block";
+            } else {
+                text2.style.display = "none";
+            }
+        }
+
+        function procitaj4() {
+            var checkBox = document.getElementById("subscribe3");
+            var text3 = document.getElementById("text3");
+
+            if (checkBox.checked == true) {
+                text3.style.display = "block";
+            } else {
+                text3.style.display = "none";
+            }
+        }
+
+    </script>
+</body>
+
+</html>
